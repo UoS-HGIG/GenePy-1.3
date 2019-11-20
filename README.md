@@ -81,7 +81,7 @@ paste freqanno caddanno geneanno > ALL_genepy.meta
 
 rm a1 b1 caddanno freqanno geneanno
 ```
-#### Prepare output folders/dependecies
+#### Prepare output folders/dependencies
 make new folders in your current directory to store raw GenePy score files
 ```
 mkdir CADD15_RAW
