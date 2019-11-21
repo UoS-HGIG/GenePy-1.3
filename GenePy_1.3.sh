@@ -2,7 +2,7 @@
 
 GENE=$1
 
-## WELCOME to GenePy v1.2
+## WELCOME to GenePy v1.3
 
 #module load conda/py2-latest
 
@@ -15,7 +15,7 @@ grep -E "\W$GENE;?\s" ALL_genepy.meta > "$GENE".tmp1
 cat header "$GENE".tmp1 > "$GENE".meta
 
 # Check if there is at least 1 variant within the GENE of interest
-# if so then it will run the make_scores_mat_5.py with subsetted variant file "$GENE".meta and gene name "$GENE" 
+# if so then it will run the make_scores_mat_6.py with subsetted variant file "$GENE".meta and gene name "$GENE" 
 l=$(wc -l "$GENE".meta| cut -d " " -f 1)
 if [ $l -gt 1 ]; then python make_scores_mat_6.py "$GENE".meta "$GENE"; echo DONE:$GENE; else echo ERROR:$GENE; fi
 rm "$GENE".tmp1 "$GENE".meta 
