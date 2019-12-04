@@ -101,6 +101,10 @@ cat header temp > ALL_genepy_exonic.meta
 Once the ALL_genepy.meta file is created, GenePy_1.3.sh can be run by simply iterating through the list of deisred genes. Be aware, the make_scores_mat_6.py file **must** be in the same directory of GenePy_1.3.sh. WARNING If using the ALL_genepy_exonic.meta, replace the correct filename in the GenePy_1.3.sh file
 
 ```
+#Create gene list 
+cut -f 7 ALL_genepy.hg38_multianno.txt | grep -v ";" | grep -v "Gene.refGene" | sort | uniq >gene.list
+
+#Run GenePy
 while read gene:
 do
 sh GenePy_1.3.sh $gene ;
