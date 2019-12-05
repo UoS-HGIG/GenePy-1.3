@@ -8,4 +8,4 @@ module load conda/py2-latest
 COUNT=$SLURM_ARRAY_TASK_ID
 DIREC=$(sed ''$COUNT'q;d' parts)
 
-while read l; do sh GENEPY_1.2.sh $l; done<$DIREC
+while read l; do sh GENEPY_1.3.sh $l; done<$DIREC
