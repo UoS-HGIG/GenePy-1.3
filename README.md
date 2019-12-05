@@ -111,3 +111,14 @@ sh GenePy_1.3.sh $gene ;
 done< gene.list
 
 ````
+Here a smart way of parallelise the generation of GenePy scores using the subber script:
+```
+# split the gene list in batches of 400 genes
+split -d -l 400 gene.list batch_
+#put all the batch names in a file
+ls batch_* >parts
+#check how many batches we have (52 in my case)
+wc -l parts
+#submit the job array
+sbatch --array=1-52 subber.sh
+```
