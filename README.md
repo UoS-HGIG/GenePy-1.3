@@ -72,7 +72,7 @@ cat b1 a1 > geneanno
 cut -f 1,2,4,5,6,7,11 ALL_genepy.hg38_multianno.txt >freqanno
 
 # transform/prepare output, this script automatically fixes missmatch between line in the vcf and annotation
-# if any fix fail, it will be prompted and replaced with "NAN". Open the caddout.tsv and find the correct annotation. If NAN are not removed, GenePy will fail.
+# if any fix fail, it will be prompted and replaced with "NAN". If NAN are not removed, GenePy will fail. The cross-annotate-cadd.py script will always fail at positions chr6:75085419 and chr17:6787257. The scores for these can be filled in manually by cross-checking with caddout.tsv
 gunzip caddout.tsv.gz
 python cross-annotate-cadd.py
 
